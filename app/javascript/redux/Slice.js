@@ -10,7 +10,6 @@ const initialState = {
 export const getMessageData = createAsyncThunk('message/getMessageData', async () => {
      const response = await fetch(API);
      const data = await response.json();
-     console.log(data);
      return data;
 });
 
