@@ -1,11 +1,18 @@
 import React from 'react';
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 
 const Message = () => {
-  const greeting = useSelector((state) => state.message);
-     return ( 
-          <h1>{greeting.message}</h1>
-      );
-}
- 
+  const messageData = useSelector(state => state.message.message);
+
+  if (messageData.isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (!messageData.message) {
+    return <p>No message available</p>;
+  }
+
+  return <h1>{messageData.message}</h1>;
+};
+
 export default Message;

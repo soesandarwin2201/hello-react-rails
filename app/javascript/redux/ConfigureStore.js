@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { getMessageData } from "./Slice";
+import { messageSlice } from "./Slice";
 
 const store = configureStore({
      reducer: {
-        message : getMessageData,
+        message : messageSlice,
      }
 });
 
